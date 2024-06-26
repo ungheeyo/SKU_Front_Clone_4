@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./nambin.css">
+    <script src="./nambin.js"></script>
+</head>
+<body>
+    <!-- full_Screen은 전체 레이아웃 -->
+    <div class="Full_Screen">
+
+        <!-- 젤 위에 있는 화면 -->
+        <div class="First_Screen">
+            <!-- 첫번째 화면이라는 의미로 이름 옆에 1을 붙임 -->
+            <div class="흥수1">흥수 파트</div>
+            <div class="지영1">지영 파트</div>
+            <div class="남빈1">
+                <!-- 이미지? 슬라이더 -->
+                <div class="slider" aria-live="polite">  <!-- aria-live="polite"동적 변경을 가능하게 해주는 것 -->
+
+                    <!-- 첫번째 이미지 -->
+                    <div class="slide" data-index="1" aria-labelledby="slide1">
+                        <img src="./img/1.png">
+                        <!-- <video src="https://www.sungkyul.ac.kr/sites/skukr/videos/main_video.mp4"></video> -->
+                    </div>
+                    <!-- 두번째 이미지 -->
+                    <div class="slide" data-index="2" aria-labelledby="slide2">
+                        <img src="./img/2.png">
+                    </div>
+                    <!-- 세번째 이미지 -->
+                    <div class="slide" data-index="3" aria-labelledby="slide3">
+                        <img src="./img/3.png">
+                    </div>
+                </div>
+
+                <!-- 현재 진행상황과 총 이미지 갯수를 나타내는 곳 -->
+                <p class="slide-cnt">
+                    <!-- 현재 진행상황 -->
+                    <span class="current-slide"></span>
+                    &nbsp;/&nbsp;
+                    <!-- 전체 갯수 -->
+                    <span class="all-slide"></span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 2번째 화면 -->
+        <div class="Second_Screen">
+            <div class="학사">학사</div>
+            <div class="자주찾는서비스">자주찾는서비스</div>
+            <div class="학사일정">학사일정</div>
+
+            <div class="ABOUT_SKU" aria-live="polite">
+                <div class="ABOUT_SKU윗부분">
+                    <div><strong class="title">ABOUT_SKU</strong></div>
+                    <div class="버튼및상황">
+                    <p id="ABOUT_SKU상황"></p>
+                    <button type="button" class="prev slick-arrow" style="display: inline-block; margin-left: 10px;"></button>
+                    <button type="button" class="stop on"></button>
+                    <button type="button" class="next slick-arrow" style="display: inline-block;"></button>
+                </div>
+                </div>
+
+                <!-- 여기부터 이미지 부분 -->
+                <div class="ABOUT_SKU_slider" aria-live="polite">
+                <div class="ABOUT_SKU_slide" data-index="1" aria-labelledby="ABOUT_SKU_slide1">
+                    <img src="https://www.sungkyul.ac.kr/sites/skukr/atchmnfl_mngr/imageSlide/15/temp_1712129425008100.jpg">
+                </div>
+                <div class="ABOUT_SKU_slide" data-index="2" aria-labelledby="ABOUT_SKU_slide2">
+                    <img src="https://www.sungkyul.ac.kr/sites/skukr/atchmnfl_mngr/imageSlide/15/temp_1655682649163100.jpg">
+                </div>
+                <div class="ABOUT_SKU_slide" data-index="3" aria-labelledby="ABOUT_SKU_slide3">
+                    <img src="https://www.sungkyul.ac.kr/sites/skukr/atchmnfl_mngr/imageSlide/15/temp_1613982893043100.jpg">
+                </div>
+                <div class="ABOUT_SKU_slide" data-index="4" aria-labelledby="ABOUT_SKU_slide4">
+                    <img src="https://www.sungkyul.ac.kr/sites/skukr/atchmnfl_mngr/imageSlide/15/temp_1613982816608100.jpg">
+                </div>
+                <div class="ABOUT_SKU_slide" data-index="5" aria-labelledby="ABOUT_SKU_slide5">
+                    <img src="https://www.sungkyul.ac.kr/sites/skukr/atchmnfl_mngr/imageSlide/15/temp_1679976589868100.jpg">
+                </div>
+                <div class="ABOUT_SKU_slide" data-index="6" aria-labelledby="ABOUT_SKU_slide6">
+                    <img src="https://www.sungkyul.ac.kr/sites/skukr/atchmnfl_mngr/imageSlide/15/temp_1679976702325100.jpg">
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3번째 화면 -->
+        <div class="Third_Screen">
+            3번째
+        </div>
+
+        <!-- 4번째 화면 -->
+        <div class="Fourth_Screen">
+            4번째
+        </div>
+
+        <!-- 바닥부분 -->
+        <div class="footer">
+            바닥
+        </div>
+    </div>
+    
+</body>
+</html>

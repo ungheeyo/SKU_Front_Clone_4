@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+
+/* 이게 전체 페이지 */
+.Full_Screen{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    /* height: 100%; */
+}
+
+/* 첫번째 페이지 */
+.First_Screen{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* height: 100vh; */
+    width: 100%;
+    /* height: 100%; */
+    position: relative;
+    opacity: 1; /* 투명도 */
+    transition: opacity 0.5s; /* 투명도 변화를 부드럽게  */
+}
+
+/* 안보이게 하기 위함*/
+.First_Screen.scrolled {
+    opacity: 0;
+}
+
+.First_Screen_mid{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; 
+    flex-direction: column;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 35px;
+}
+
+/* 남빈1의 전체부분 */
+.slider{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* 보여지는 이미지들 */
+.slide ,#video , .ABOUT_SKU_slide{
+    display: none;
+    width: 100%;
+    height: 100%;
+    /* margin-right: 80px; */
+    flex:1;
+    animation: ABOUT_SKU_slide 7.5s infinite linear;
+}
+
+
+/* 현재 차례의 이미지가 보여지도록 함 */
+.slide.active ,.ABOUT_SKU_slide.active {
+    display: block; 
+    animation: ABOUT_SKU_slide 7.5s infinite linear;
+}
+
+@keyframes slideShow {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    10% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    33% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    43% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+/* 진행상황 및 총갯수 보여주는 거 */
+.slide-cnt{
+    margin-left: 10px;
+    color: #fff
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* 2번째 화면 */
+.Second_Screen{
+    height: 100vh;
+    width: 90%;
+    display: grid;
+    align-content: stretch;
+    justify-items: stretch;
+    /* grid-template-columns: repeat(2, 1fr); 행을 2개씩 나누겠다는 뜻 */
+    grid-template-columns: 1fr 1fr; /* 두 개의 동일한 크기 컬럼 */
+    grid-row-gap: 20px; /* 행 사이의 간격을 20px */
+    grid-column-gap: 30px; /* 열 사이의 간격을 30px */
+    position: relative;
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/bg-info.jpg) no-repeat center center;
+    margin: 300px 30px 30px 85px;
+}
+
+
+.item1 {
+    grid-column: 1 / 2; /* 첫 번째 컬럼에 배치 */
+}
+
+.item2 {
+    grid-column: 2 / 3; /* 두 번째 컬럼에 배치 */
+}
+
+.ABOUT_SKU윗부분{
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: 10px; */
+}
+
+/* ABOUT_SKU의 제목부분 */
+.title {
+    display: block;
+    margin-bottom: 19px;
+    font-family: 'TitilliumWeb-SemiBold';
+    font-size: 34px;
+    color: #000;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+
+/* 상황부분 */
+.버튼및상황{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 80px; */
+}
+
+#ABOUT_SKU상황::before {
+    content: attr(data-before);
+    color: #9299a6;color: #000;
+    font-family: 'TitilliumWeb-SemiBold';
+    font-size: 14px;
+    }
+
+#ABOUT_SKU상황::after {
+content: attr(data-after);
+color: #9299a6;
+font-family: 'TitilliumWeb-SemiBold';
+font-size: 14px;
+}
+
+/* 여기가 버튼 스타일 */
+.prev {
+    background: url(https://www.sungkyul.ac.kr/Web-home/fnct/imageSlide/kr_popup/images/ico-about-prev.png) no-repeat center center;
+}
+
+.stop{
+    background: url(https://www.sungkyul.ac.kr/Web-home/fnct/imageSlide/kr_popup/images/ico-about-stop.png)no-repeat center center;
+}
+
+.next{
+    background: url(https://www.sungkyul.ac.kr/Web-home/fnct/imageSlide/kr_popup/images/ico-about-next.png)no-repeat center center;
+}
+
+.prev,.next ,.stop {
+    width: 10px;
+    height: 16px;
+    margin: 4px;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: 1px solid transparent; /* 테두리를 투명하게 해서 안보이도록 함 */
+}
+
+
+.학사 {
+    display: flex;
+    height: 315px;
+}
+
+.자주찾는서비스 {
+    border : 1px solid gray;
+    display: flex;
+    height: 250px;
+    background: url(https://www.sungkyul.ac.kr/Web-home/fnct/imageSlide/kr_favorite/images/logo-favorite.png) no-repeat bottom right;
+}
+
+.학사일정 {
+    border : 1px solid gray;
+    display: flex;
+    height: 250px;
+    margin-top: 121px;
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/bg-sch.png) no-repeat center center;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* 세번째 화면 */
+.Third_Screen{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 100vh;
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/bg-introduce.jpg) no-repeat center center;
+    margin: 30px 30px 30px 85px;
+}
+
+.Third_Left{
+    width: 70%;
+    padding: 20px;
+}
+
+.Third_Right{
+    width: 30%;
+    padding: 20px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* 4번째 화면 */
+.Fourth_Screen{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/bg-sns.jpg) no-repeat center center;
+    align-items: center;
+    margin: 30px 30px 30px 85px;
+}
+
+.Fourth_mid{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    gap : 20px;
+}
+
+.mid1, .mid2 ,.mid3 , .mid4 {
+    margin-top: 30px;
+    padding: 40px; /* 내부 여백 */
+    background-color: #f0f0f0; /* 배경색 */
+    flex: 1; /* 아이템들이 같은 비율로 공간을 차지하도록 설정 */
+    width: 320px;
+    height: 280px;
+}
+
+.mid1_box{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    /* width: 300px; */
+    margin-top:170px;
+}
+
+.mid1_box_strong{
+    font-family: 'Noto Regular';
+    font-size: 18px;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+.mid1{
+    background: url(https://i.ytimg.com/vi/qQU7cquSmGU/mqdefault.jpg) no-repeat center center;
+}
+
+.mid2{
+    background: url(https://i.ytimg.com/vi/850_xNopPMQ/mqdefault.jpg) no-repeat center center;
+}
+
+.mid3{
+    background: url(https://i.ytimg.com/vi/4ZTMx0UxOFI/mqdefault.jpg) no-repeat center center;
+}
+
+.mid4{
+    background: url(https://i.ytimg.com/vi/CJ8_nYczlm0/mqdefault.jpg) no-repeat center center;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* 푸터부분 */
+.footer{
+    background: #272b31;
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_top{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #51565f;
+    width: 100%;
+}
+
+.footer_top_left{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.footer_top_right {
+    padding-right: 20px;
+    display: flex;
+    /* justify-content: flex-end; */
+    margin-left: 255px;
+}
+
+
+a{
+    text-decoration: none;
+    font-family: 'Noto Light';
+    font-size: 16px;
+    margin-right: 26px;
+}
+
+a:not(:first-of-type) {
+    color: white;
+}
+
+.footer_btn{
+    display: flex;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    height: 64px;
+    width: 280px;
+    background-color: #3d4146;
+    color: white;
+}
+
+.footer_btn2{
+    background: #295ca4 url(https://www.sungkyul.ac.kr/sites/skukr/images/common/arrow-jump.png) no-repeat center center;
+    width: 66px;
+    height: 64px;
+}
+
+.footer_bottom{
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_bottom_left{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_span{
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, .8);
+    margin-left: 15px;
+}
+
+.footer_p{
+    font-family: 'TitilliumWeb-ExtraLight';
+    color: rgba(255, 255, 255, .3);
+    margin-left: 15px;
+}
+.footer_text{
+    color: #fff;
+}
+
+
+.footer_img{
+    vertical-align: top;
+    width: auto;
+    max-width: 100%;
+    margin-left: 260px;
+}
+
+
+.side_btn_div{
+    position: fixed; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 1000; /* 다른 요소들보다 앞에 위치하도록 */
+}
+
+.side_btn{
+    background: rgba(38, 79, 134, .8) url(https://www.sungkyul.ac.kr/sites/skukr/images/main/arrow-side-pop-open.png) no-repeat center 64%;
+    color : white;
+    width: 70px;
+    padding: 29px 0 55px 0;
+}
+
+.close_btn{
+    position: absolute;
+    display: none;
+    background: rgba(38, 79, 134, .8) url(https://www.sungkyul.ac.kr/sites/skukr/images/main/arrow-side-pop-close.png) no-repeat center 64%;
+    color : white;
+    width: 70px;
+    padding: 29px 0 55px 0;
+    transform: translateY(-50%); 
+    left : -240px;
+    top : 50%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.click_side {
+    display: none;
+    position: fixed; 
+    top: 50%; 
+    right: 0; 
+    transform: translateY(-50%);
+    /* display: flex; */
+    flex-direction: column;
+    width: 173px;
+    height: 100vh; 
+    z-index: 1000;
+    padding: 15% 0;
+    overflow-y: auto;
+    background-color: #295ca4;
+}
+
+
+.btn_span{
+    width: 100%;
+    font-family: 'Noto DemiLight';
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    margin-top: 15px;
+}
+.click_side_inside{
+    margin-top: 60px;
+    width: 100%;
+    /* padding: 25px; */
+    font-family: 'Noto DemiLight';
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/ico-float-banner1.png) no-repeat top;
+    padding-top: 40px;
+}
+
+.notify{
+    position: absolute;
+    right: 60px;
+    top: 80px;
+    width: 21px;
+    height: 21px;
+    background: #c71514;
+    border-radius: 100%;
+}
+
+.click_side_inside2{
+    width: 100%;
+    /* padding: 25px; */
+    font-family: 'Noto DemiLight';
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/ico-float-banner2.png) no-repeat top;
+    padding-top: 40px;
+    margin-top: 30px;
+}
+
+.click_side_inside3{
+    width: 100%;
+    /* padding: 25px; */
+    font-family: 'Noto DemiLight';
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/ico-float-banner3.png) no-repeat top;
+    padding-top: 40px;
+    margin-top: 30px;
+}
+
+.click_side_text{
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-bottom: 2px;
+padding: 3px 0;
+border-radius: 3px;
+font-family: 'TitilliumWeb-Regular';
+font-size: 15px;
+color: #fff;
+text-align: center;
+margin-top : 90px;
+}
+
+.click_side_footer{
+    background: url(https://www.sungkyul.ac.kr/sites/skukr/images/main/ico-goto-top.png) no-repeat center;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 100%;
+    text-indent: -9999px;
+    width: 51px;
+    height: 51px;
+    margin-top: 30px;
+    align-items: center;
+    text-align: center;
+    margin-left: 60px;
+}
